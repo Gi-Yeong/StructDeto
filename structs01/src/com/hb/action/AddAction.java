@@ -30,7 +30,7 @@ public class AddAction extends ActionSupport {
     @Override
     public void validate() {
         if ("".equals(sabun) || sabun == 0){
-            addFieldError("sabun", "빈값입니다");
+            addFieldError("sabun", "입력해 주세요");
         } else if (sabun > 9999){
             addFieldError("sabun", "4자리 입니다");
         }
