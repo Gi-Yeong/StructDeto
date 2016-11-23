@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="default" extends="struts-default">
+        <action name="test01" class="com.structs.tutorial.action.TutorialAction01">
+            <result name="success">/ex01.jsp</result>
+            <result name="failure">/err.jsp</result>
+        </action>
+        <action name="test02" class="com.structs.tutorial.action.TutorialAction02">
+            <result name="success">/ex02.jsp</result>
+        </action>
+        <action name="test03" class="com.structs.tutorial.action.TutorialAction03">
+            <result name="success">/ex02.jsp</result>
+        </action>
+        <action name="test04" class="com.structs.tutorial.action.TutorialAction04" method="actionRunner">
+            <result name="success">/ex02.jsp</result>
+        </action>
+        <action name="test05" class="com.structs.tutorial.action.TutorialAction04">
+            <result name="success">/ex02.jsp</result>
+        </action>
+    </package>
+
+    <package name="ex02" extends="struts-default">    <!--namespace="/" 아래 에서만 통함-->
+        <action name="test11" class="com.structs.tutorial.action2.Action01">
+            <result name="success">/login/form.jsp</result>
+            <result name="error">/err.jsp</result>
+        </action>
+        <action name="test12" class="com.structs.tutorial.action2.Action02">
+            <result name="success">/login/result.jsp</result>
+            <result name="input">/login/form.jsp</result>
+            <result name="error">/err.jsp</result>
+        </action>
+
+        <action name="test21" class="com.structs.tutorial.action3.Action01">
+            <result name="success">/login2/form.jsp</result>
+            <result name="error">/err.jsp</result>
+        </action>
+        <action name="test22" class="com.structs.tutorial.action3.Action02">
+            <interceptor-ref name="prepare"/>       <!--객체 생성-->
+            <interceptor-ref name="modelDriven"/>   <!--객체 이용-->
+            <interceptor-ref name="params"/>
+            <result name="success">/login2/result.jsp</result>
+            <result name="input">/login2/form.jsp</result>
+            <result name="error">/err.jsp</result>
+        </action>
+
+        <action name="test31" class="com.structs.tutorial.action2.Action03" method="formView">
+            <result name="input">/login3/form.jsp</result>
+        </action>
+        <action name="test32" class="com.structs.tutorial.action2.Action03">
+            <!--<interceptor-ref name="params"/>-->
+            <!--<interceptor-ref name="validation"/>    &lt;!&ndash;validation 검사, 상위 버전에서는 없어도 됨&ndash;&gt;-->
+            <!--<interceptor-ref name="workflow"/>-->
+            <!--&lt;!&ndash;param와 validation이 정상적으로 동작 하는지, 현재 버전에서는 위에2개까지 3개가 없어도 됨 &ndash;&gt;-->
+            <result name="success">/login3/result.jsp</result>
+            <result name="input">/login3/form.jsp</result>
+        </action>
+    </package>
+
+    <include file="resource/structs-1.xml"/>
+    <include file="resource/structs-2.xml"/>
+</struts>
