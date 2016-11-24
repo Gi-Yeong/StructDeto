@@ -16,7 +16,7 @@
     <table>
         <tr>
             <td>사번</td>
-            <td><input type="text" name="sabun">${filedErrors.sabun }</td>
+            <td><input type="text" name="sabun">${fieldErrors.sabun }</td>
         </tr>
         <tr>
             <td>이름</td>
