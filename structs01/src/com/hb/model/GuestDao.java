@@ -52,4 +52,25 @@ public class GuestDao {
         }
 
     }
+
+    public GuestVo selectOne(int sabun) throws SQLException {
+        String sql = "SELECT * FROM GUEST WHERE SABUN = ?";
+        try {
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, sabun);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                return new GuestVo(rs.getInt("sabun")
+                        , rs.getString("name")
+                        , rs.getDate("nalja")
+                        , rs.getInt("pay"));
+            }
+
+        } finally {
+            if (rs != null) rs.close();
+            if (pstmt != null) pstmt.close();
+            if (conn != null) conn.close();
+        }
+        return null;
+    }
 }

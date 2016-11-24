@@ -30,7 +30,7 @@
     %>
     <tr>
         <td><%=vo.getSabun()%></td>
-        <td><%=vo.getName()%></td>
+        <td><a href="detail.action?idx=<%=vo.getSabun()%>"><%=vo.getName()%></a></td>
         <td><%=vo.getNalja()%></td>
         <td><%=vo.getPay()%></td>
     </tr>

@@ -17,5 +17,8 @@
             <result name="input">/guest/add.jsp</result>
             <result type="chain">list</result>
         </action>
+        <action name="detail" class="com.hb.action.DetailAction">
+            <result name="success">/guest/detail.jsp</result>
+        </action>
     </package>
 </struts>
