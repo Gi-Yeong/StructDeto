@@ -20,5 +20,15 @@
         <action name="detail" class="com.hb.action.DetailAction">
             <result name="success">/guest/detail.jsp</result>
         </action>
+        <action name="edit" class="com.hb.action.DetailAction">
+            <result name="success">/guest/edit.jsp</result>
+        </action>
+        <action name="update" class="com.hb.action.UpdateAction">
+            <result name="input">/guest/edit.jsp</result>
+            <result type="chain">list</result>
+        </action>
+        <action name="delete" class="com.hb.action.DelAction">
+            <result type="chain">list</result>
+        </action>
     </package>
 </struts>

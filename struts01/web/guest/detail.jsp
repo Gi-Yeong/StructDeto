@@ -31,8 +31,8 @@
     </tr>
     <tr>
         <td colspan="2">
-            <a href="#">수정</a>
-            <a href="#">삭제</a>
+            <a href="edit.action?idx=${bean.sabun}">수정</a>
+            <a href="delete.action?idx=${bean.sabun}">삭제</a>
         </td>
     </tr>
 </table>
